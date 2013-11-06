@@ -77,15 +77,17 @@ def set_enquirer(context, event):
 @grok.subscribe(ITarget, IObjectAddedEvent)
 def set_reader_on_target(context, event):
     """Set Reader role on target to responsible after opinion or validation creation"""
-    target = context.target.to_object
-    grant_local_role_to_responsible(context, 'Reader', target)
+    if context.target:
+        target = context.target.to_object
+        grant_local_role_to_responsible(context, 'Reader', target)
 
 
 @grok.subscribe(IValidation, IObjectAddedEvent)
 def set_reviewer_on_target(context, event):
     """Set Reviewer role on target to responsible after validation creation"""
-    target = context.target.to_object
-    grant_local_role_to_responsible(context, 'Reviewer', target)
+    if context.target:
+        target = context.target.to_object
+        grant_local_role_to_responsible(context, 'Reviewer', target)
 
 
 @grok.subscribe(IValidation, IObjectAddedEvent)
