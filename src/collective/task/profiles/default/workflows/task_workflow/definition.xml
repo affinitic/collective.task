@@ -109,6 +109,7 @@
   <action url="" category="workflow" icon="" i18n:translate="">Mark as done</action>
   <guard>
    <guard-role>Editor</guard-role>
+   <guard-role>Reviewer</guard-role>
   </guard>
  </transition>
  <transition transition_id="refuse-refusal" title="Refuse refusal" new_state="todo" trigger="USER" before_script="" after_script="">
