@@ -1,3 +1,4 @@
+from Acquisition import aq_parent
 from five import grok
 
 from OFS.interfaces import IObjectWillBeRemovedEvent
@@ -71,6 +72,16 @@ def set_enquirer(context, event):
     enquirer = api.user.get_current().id
     enquirer_dm = LocalRolesToPrincipalsDataManager(context, IBaseTask['enquirer'])
     enquirer_dm.set((enquirer,))
+
+    parent = aq_parent(context)
+    if IBaseTask.providedBy(parent):
+        # parent is also a task, we create Reader local role value on its own
+        # roles, unless parent enquirer is the greffier.
+        if not 'Greffier' in api.user.get_roles(parent.enquirer[0]):
+            for user_id, roles in parent.get_local_roles():
+                if 'Reader' in roles or 'Reviewer' in roles:
+                    context.manage_addLocalRoles(user_id, ['Reader'])
+
     context.reindexObject()
 
 
