@@ -127,13 +127,13 @@
  <transition transition_id="subtask-abandoned" title="Subtask abandoned" new_state="todo" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="" i18n:translate="">Subtask abandoned</action>
   <guard>
-   <guard-expression>here/@@subtasks_abandoned</guard-expression>
+   <guard-expression>python: here.subtasks_abandoned()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="subtask-done" title="Subtask done" new_state="done" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="" i18n:translate="">Subtask done</action>
   <guard>
-   <guard-expression>here/@@subtask_done</guard-expression>
+   <guard-expression>python: here.subtasks_done()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="take-responsibility" title="Take responsibility" new_state="in-progress" trigger="USER" before_script="" after_script="">
