@@ -30,7 +30,10 @@ def responsible(obj, **kw):
 
 @indexer(IBaseTask)
 def deadline(obj, **kw):
-    return obj.deadline or obj.modified()
+    if hasattr(obj, 'deadline') and obj.deadline:
+        return obj.deadline
+    # fallback to modification time if there's no deadline (== information)
+    return obj.modified()
 
 
 @indexer(IBaseTask)
