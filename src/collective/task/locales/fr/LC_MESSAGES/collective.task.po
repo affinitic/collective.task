@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.task\n"
-"POT-Creation-Date: 2013-07-09 14:17+0000\n"
+"POT-Creation-Date: 2014-02-24 08:50+0000\n"
 "PO-Revision-Date: 2013-03-21 16:30+0100\n"
 "Last-Translator: Cédric Messiant <cedricmessiant@ecreall.com>\n"
 "Language-Team: Ecréall\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 #: ../browser/add_information.py:17
-#: ../browser/attribute_task.py:65
+#: ../browser/attribute_task.py:59
 msgid "Add"
 msgstr "Ajouter"
 
@@ -23,12 +23,16 @@ msgstr "Ajouter"
 msgid "Add Tasks Portlet"
 msgstr "Ajouter une portlet des tâches"
 
-#: ../interfaces.py:44
+#: ../interfaces.py:59
 msgid "Addressee"
 msgstr "Destinataire"
 
+#: ../content/information.py:20
+msgid "Addressees"
+msgstr "Destinataires"
+
 #: ../browser/tasks-portlet.pt:21
-#: ../interfaces.py:26
+#: ../interfaces.py:74
 msgid "Deadline"
 msgstr "Échéance"
 
@@ -36,19 +40,21 @@ msgstr "Échéance"
 msgid "Edit Tasks Portlet"
 msgstr "Modifier la portlet des tâches"
 
-#: ../interfaces.py:31
+#: ../interfaces.py:46
 msgid "Enquirer"
 msgstr "Demandeur"
 
 #: ../profiles/default/types/information.xml
+#: ../profiles/testing/types/information.xml
 msgid "Information"
 msgstr "Information"
 
-#: ../interfaces.py:24
+#: ../interfaces.py:42
 msgid "Note"
 msgstr "Note"
 
 #: ../profiles/default/types/opinion.xml
+#: ../profiles/testing/types/opinion.xml
 msgid "Opinion"
 msgstr "Demande d'avis"
 
@@ -56,7 +62,7 @@ msgstr "Demande d'avis"
 msgid "Target"
 msgstr "Cible"
 
-#: ../profiles/default/types/task.xml
+#: ../profiles/testing/types/task.xml
 msgid "Task"
 msgstr "Tâche"
 
@@ -73,15 +79,16 @@ msgid "This portlet displays the list of related tasks."
 msgstr "Cette portlet affiche la liste des tâches liées"
 
 #: ../browser/portlet.py:17
-#: ../interfaces.py:23
+#: ../interfaces.py:41
 msgid "Title"
 msgstr "Titre"
 
 #: ../profiles/default/types/validation.xml
+#: ../profiles/testing/types/validation.xml
 msgid "Validation"
 msgstr "Demande de validation"
 
-#: ../browser/attribute_task.py:35
+#: ../browser/attribute_task.py:33
 msgid "Workflow action"
 msgstr "Action de workflow"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.task\n"
-"POT-Creation-Date: 2013-07-20 21:09+0000\n"
+"POT-Creation-Date: 2014-02-24 08:50+0000\n"
 "PO-Revision-Date: 2013-07-08 16:09+0100\n"
 "Last-Translator: Vincent Fretin <vincent.fretin@gmail.com>\n"
 "Language-Team: Ecréall\n"
@@ -43,6 +43,10 @@ msgid "Attributed"
 msgstr "Attribué"
 
 #: ../profiles/default/registry.xml
+msgid "Dates"
+msgstr "Dates"
+
+#: ../profiles/default/registry.xml
 msgid "Deadline"
 msgstr "Échéance"
 
@@ -63,6 +67,10 @@ msgstr "En cours"
 #: ../profiles/default/workflows/task_workflow/definition.xml
 msgid "Mark as done"
 msgstr "Marquer comme fait"
+
+#: ../profiles/default/registry.xml
+msgid "Metadata"
+msgstr "Metadata"
 
 #: ../profiles/default/workflows/task_workflow/definition.xml
 msgid "Refusal requested"
@@ -125,4 +133,3 @@ msgstr "Valider"
 #: ../profiles/default/workflows/validation_workflow/definition.xml
 msgid "Validated"
 msgstr "Validé"
-
