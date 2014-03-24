@@ -34,10 +34,12 @@ def task_changed_state(context, event):
     if parent.portal_type == 'task':
         with api.env.adopt_roles(['Reviewer']):
             if event.new_state.id == 'done':
-                api.content.transition(obj=parent, transition='subtask-done')
+                with api.env.adopt_user('admin'):
+                    api.content.transition(obj=parent, transition='subtask-done')
                 parent.reindexObject(idxs=['review_state'])
             elif event.new_state.id == 'abandoned':
-                api.content.transition(obj=parent, transition='subtask-abandoned')
+                with api.env.adopt_user('admin'):
+                    api.content.transition(obj=parent, transition='subtask-abandoned')
                 parent.reindexObject(idxs=['review_state'])
 
 
