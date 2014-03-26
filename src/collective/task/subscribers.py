@@ -113,6 +113,14 @@ def set_contributor_on_document(context, event):
     grant_local_role_to_responsible(context, 'Contributor', document)
 
 
+@grok.subscribe(IValidation, IObjectAddedEvent)
+def set_editor_on_document(context, event):
+    """Set Editor role on document to responsibile after validation
+    creation."""
+    document = context.getParentNode()
+    grant_local_role_to_responsible(context, 'Editor', document)
+
+
 @grok.subscribe(IDmsDocument, IObjectModifiedEvent)
 def reindex_brain_metadata_on_basetask(doc, event):
     """Reindex brain metadatas when document is modified"""
