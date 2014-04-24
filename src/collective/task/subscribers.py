@@ -92,7 +92,8 @@ def set_enquirer(context, event):
                 if 'Reader' in roles or 'Reviewer' in roles:
                     context.manage_addLocalRoles(user_id, ['Reader'])
 
-    context.reindexObject()
+    context.reindexObjectSecurity()
+    context.reindexObject(idxs=['allowedRolesAndUsers'])
 
 
 @grok.subscribe(ITarget, IObjectAddedEvent)
