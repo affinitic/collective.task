@@ -1,3 +1,6 @@
+import inspect
+from logging import getLogger
+
 from Acquisition import aq_parent
 from five import grok
 
@@ -17,6 +20,8 @@ from collective.task.content.validation import IValidation
 from collective.task.interfaces import IBaseTask
 from collective.dms.basecontent.dmsdocument import IDmsDocument
 
+log = getLogger(__name__)
+
 
 def grant_local_role_to_responsible(context, role, target):
     """Grant local role to responsible on target"""
@@ -30,6 +35,7 @@ def task_changed_state(context, event):
     """When a task is abandoned or done, check if it is a subtask
     and make the wanted transition to parent
     """
+    log.info(inspect.stack()[0][3])
     parent = context.getParentNode()
     if parent.portal_type == 'task':
         with api.env.adopt_roles(['Reviewer']):
@@ -47,6 +53,7 @@ def task_changed_state(context, event):
 def reopen_parent_task(context, event):
     """When a task is deleted, reopen its parent task
     """
+    log.info(inspect.stack()[0][3])
     parent = context.getParentNode()
     parent_state = api.content.get_state(parent)
     if parent.portal_type == 'task' and parent_state == 'attributed':
@@ -71,6 +78,7 @@ def reopen_parent_task(context, event):
 @grok.subscribe(IBaseTask, IObjectAddedEvent)
 def set_enquirer(context, event):
     """Set Enquirer field after task creation"""
+    log.info(inspect.stack()[0][3])
     enquirer = api.user.get_current().id
     enquirer_dm = LocalRolesToPrincipalsDataManager(context, IBaseTask['enquirer'])
     enquirer_dm.set((enquirer,))
@@ -90,6 +98,7 @@ def set_enquirer(context, event):
 @grok.subscribe(ITarget, IObjectAddedEvent)
 def set_reader_on_target(context, event):
     """Set Reader role on target to responsible after opinion or validation creation"""
+    log.info(inspect.stack()[0][3])
     if context.target:
         target = context.target.to_object
         grant_local_role_to_responsible(context, 'Reader', target)
@@ -98,6 +107,7 @@ def set_reader_on_target(context, event):
 @grok.subscribe(IValidation, IObjectAddedEvent)
 def set_reviewer_on_target(context, event):
     """Set Reviewer role on target to responsible after validation creation"""
+    log.info(inspect.stack()[0][3])
     if context.target:
         target = context.target.to_object
         grant_local_role_to_responsible(context, 'Reviewer', target)
@@ -109,6 +119,7 @@ def set_contributor_on_document(context, event):
     """Set Contributor role on document to responsible after opinion and
     validation creation. (Contributor can create a new version)
     """
+    log.info(inspect.stack()[0][3])
     document = context.getParentNode()
     grant_local_role_to_responsible(context, 'Contributor', document)
 
@@ -117,6 +128,7 @@ def set_contributor_on_document(context, event):
 def set_editor_on_document(context, event):
     """Set Editor role on document to responsibile after validation
     creation."""
+    log.info(inspect.stack()[0][3])
     document = context.getParentNode()
     grant_local_role_to_responsible(context, 'Editor', document)
 
@@ -124,6 +136,7 @@ def set_editor_on_document(context, event):
 @grok.subscribe(IDmsDocument, IObjectModifiedEvent)
 def reindex_brain_metadata_on_basetask(doc, event):
     """Reindex brain metadatas when document is modified"""
+    log.info(inspect.stack()[0][3])
     if isinstance(event, ContainerModifiedEvent):
         return
 
@@ -140,6 +153,7 @@ def reindex_brain_metadata_on_basetask(doc, event):
 def set_reader_on_versions(context, event):
     """Set Reader role on Opinion enquirer on all versions created by
     the responsible when the Opinion is returned"""
+    log.info(inspect.stack()[0][3])
     if event.new_state.id == 'done':
         responsible = context.responsible[0]
         enquirer = context.enquirer[0]
