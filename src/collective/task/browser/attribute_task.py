@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from z3c.form import button
 from z3c.form.field import Fields
 from z3c.form.interfaces import HIDDEN_MODE
@@ -70,13 +72,18 @@ class AttributeTask(DefaultAddForm):
         if errors:
             self.status = self.formErrorsMessage
             return
-        obj = self.createAndAdd(data)
+        obj = None
+        for responsible in data['responsible']:
+            _data = deepcopy(data)
+            _data['responsible'] = [responsible]
+            obj = self.createAndAdd(_data)
         if obj is not None:
             # mark only as finished if we get the new object
             self._finishedAdd = True
             IStatusMessage(self.request).addStatusMessage(DMF(u"Item created"), "info")
             # set Editor role to task responsible on the first non Task object in acquisition
             nontask = find_nontask(parent_task)
-            nontask.manage_addLocalRoles(obj.responsible[0], ['Editor',])
+            for responsible in data['responsible']:
+                nontask.manage_addLocalRoles(responsible, ['Editor',])
             nontask.reindexObjectSecurity()
             self.immediate_view = "%s/content_status_modify?workflow_action=%s" % (container_url, workflow_action)

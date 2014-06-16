@@ -25,8 +25,8 @@ log = getLogger(__name__)
 
 def grant_local_role_to_responsible(context, role, target):
     """Grant local role to responsible on target"""
-    responsible = context.responsible[0]
-    target.manage_addLocalRoles(responsible, [role])
+    for responsible in context.responsible:
+        target.manage_addLocalRoles(responsible, [role])
     target.reindexObject()
 
 
