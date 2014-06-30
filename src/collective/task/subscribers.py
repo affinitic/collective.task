@@ -41,11 +41,17 @@ def task_changed_state(context, event):
         with api.env.adopt_roles(['Reviewer']):
             if event.new_state.id == 'done':
                 with api.env.adopt_user('admin'):
-                    api.content.transition(obj=parent, transition='subtask-done')
+                    try:
+                        api.content.transition(obj=parent, transition='subtask-done')
+                    except api.exc.InvalidParameterError:
+                        pass
                 parent.reindexObject(idxs=['review_state'])
             elif event.new_state.id == 'abandoned':
                 with api.env.adopt_user('admin'):
-                    api.content.transition(obj=parent, transition='subtask-abandoned')
+                    try:
+                        api.content.transition(obj=parent, transition='subtask-abandoned')
+                    except api.exc.InvalidParameterError:
+                        pass
                 parent.reindexObject(idxs=['review_state'])
 
 

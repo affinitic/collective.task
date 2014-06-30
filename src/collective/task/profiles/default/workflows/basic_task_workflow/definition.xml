@@ -22,6 +22,7 @@
  </state>
  <state state_id="todo" title="To do" i18n:attributes="title">
   <exit-transition transition_id="mark-as-done"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="View" acquired="False" i18n:attributes="title">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -34,10 +35,28 @@
    <permission-role>Reviewer</permission-role>
   </permission-map>
  </state>
+ <state state_id="abandoned" title="Abandoned" i18n:attributes="title">
+  <permission-map name="View" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+
  <transition transition_id="mark-as-done" title="Mark as done" new_state="done" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="" i18n:translate="">Mark as done</action>
   <guard>
     <guard-role>Editor</guard-role>
+  </guard>
+ </transition>
+<transition transition_id="abandon" title="Abandon" new_state="abandoned" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Abandon</action>
+  <guard>
+   <guard-role>Manager</guard-role>
   </guard>
  </transition>
 </dc-workflow>
