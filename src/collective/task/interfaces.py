@@ -2,7 +2,6 @@
 """Module where all interfaces, events and exceptions live."""
 import datetime
 
-from z3c.form.browser.select import SelectFieldWidget
 from zope import schema
 from zope.interface import provider
 
@@ -52,7 +51,7 @@ class IBaseTask(model.Schema):
         max_length=1,
         required=False,
     )
-    form.widget(enquirer=SelectFieldWidget)
+    form.widget(enquirer=AjaxChosenMultiFieldWidget)
     form.mode(enquirer='hidden')
 
     responsible = LocalRolesToPrincipals(
