@@ -99,7 +99,7 @@ def set_enquirer(context, event):
                     context.manage_addLocalRoles(user_id, ['Reader'])
 
     context.reindexObjectSecurity()
-    context.reindexObject(idxs=['allowedRolesAndUsers'])
+    context.reindexObject(idxs=['allowedRolesAndUsers', 'enquirer'])
 
 
 @grok.subscribe(ITarget, IObjectAddedEvent)
