@@ -47,6 +47,7 @@
  <state state_id="in-progress" title="In progress" i18n:attributes="title">
   <exit-transition transition_id="ask-for-refusal"/>
   <exit-transition transition_id="mark-as-done"/>
+  <exit-transition transition_id="return-responsibility"/>
   <permission-map name="View" acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
@@ -138,6 +139,12 @@
  </transition>
  <transition transition_id="take-responsibility" title="Take responsibility" new_state="in-progress" trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=take-responsibility" category="workflow" icon="" i18n:translate="">Take responsibility</action>
+  <guard>
+   <guard-role>Editor</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="return-responsibility" title="Return responsibility" new_state="todo" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=return-responsibility" category="workflow" icon="" i18n:translate="">Return responsibility</action>
   <guard>
    <guard-role>Editor</guard-role>
   </guard>

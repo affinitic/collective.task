@@ -93,6 +93,10 @@ msgid "Responsible"
 msgstr "Destinataire"
 
 #: ../profiles/default/workflows/task_workflow/definition.xml
+msgid "Return responsibility"
+msgstr "Annuler la prise en charge"
+
+#: ../profiles/default/workflows/task_workflow/definition.xml
 msgid "Subtask abandoned"
 msgstr "Sous-tâche abandonnée"
 
