@@ -30,6 +30,14 @@ msgstr ""
 msgid "Addressee"
 msgstr ""
 
+#: ../browser/cancel_attribution.py:76
+msgid "Apply"
+msgstr ""
+
+#: ../browser/cancel_attribution.py:71
+msgid "Cancel attribution(s)"
+msgstr ""
+
 #: ../browser/tasks-portlet.pt:21
 #: ../interfaces.py:26
 msgid "Deadline"
@@ -53,6 +61,10 @@ msgstr ""
 
 #: ../profiles/default/types/opinion.xml
 msgid "Opinion"
+msgstr ""
+
+#: ../browser/cancel_attribution.py:72
+msgid "Please select attributions to cancel. The responsibles will be notified by mail."
 msgstr ""
 
 #: ../behaviors.py:14

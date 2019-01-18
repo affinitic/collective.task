@@ -45,6 +45,10 @@ msgstr ""
 msgid "Attributed"
 msgstr ""
 
+#: ../profiles/default/workflows/task_workflow/definition.xml
+msgid "Cancel attribution(s)"
+msgstr ""
+
 #: ../profiles/default/registry.xml
 msgid "Deadline"
 msgstr ""

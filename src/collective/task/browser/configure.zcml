@@ -19,6 +19,14 @@
         permission="zope2.View"
         />
 
+
+    <browser:page
+        name="cancel_attribution"
+        for="collective.task.content.task.ITask"
+        class=".cancel_attribution.CancelTaskAttribution"
+        permission="zope2.View"
+        />
+
     <browser:page
         for="..interfaces.IBaseTask"
         name="view"

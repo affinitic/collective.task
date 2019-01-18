@@ -42,6 +42,10 @@ msgstr "Attribuer la tâche à"
 msgid "Attributed"
 msgstr "Attribué"
 
+#: ../profiles/default/workflows/task_workflow/definition.xml
+msgid "Cancel attribution(s)"
+msgstr "Annuler les attributions"
+
 #: ../profiles/default/registry.xml
 msgid "Dates"
 msgstr "Dates"

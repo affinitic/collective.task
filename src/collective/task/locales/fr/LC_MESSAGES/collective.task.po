@@ -31,6 +31,14 @@ msgstr "Destinataire"
 msgid "Addressees"
 msgstr "Destinataires"
 
+#: ../browser/cancel_attribution.py:76
+msgid "Apply"
+msgstr "Appliquer"
+
+#: ../browser/cancel_attribution.py:71
+msgid "Cancel attribution(s)"
+msgstr "Annuler les attributions"
+
 #: ../browser/tasks-portlet.pt:21
 #: ../interfaces.py:74
 msgid "Deadline"
@@ -57,6 +65,10 @@ msgstr "Note"
 #: ../profiles/testing/types/opinion.xml
 msgid "Opinion"
 msgstr "Demande d'avis"
+
+#: ../browser/cancel_attribution.py:72
+msgid "Please select attributions to cancel. The responsibles will be notified by mail."
+msgstr "Veuillez sélectionner les attributions à annuler. Les destinaires en seront informés par email."
 
 #: ../behaviors.py:14
 msgid "Target"

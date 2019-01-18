@@ -47,6 +47,14 @@ def task_changed_state(context, event):
                         pass
                 parent.reindexObject(idxs=['review_state'])
             elif event.new_state.id == 'abandoned':
+                # don't transition parent task if other subtasks are still live
+                sibling_subtasks = set(parent.listFolderContents()).difference([context])
+                if any([
+                    task for task in sibling_subtasks
+                    if api.content.get_state(task) not in ('abandoned', 'done')
+                ]):
+                    return
+
                 with api.env.adopt_user('admin'):
                     try:
                         api.content.transition(obj=parent, transition='subtask-abandoned')
