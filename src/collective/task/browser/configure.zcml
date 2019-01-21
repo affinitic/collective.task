@@ -28,6 +28,13 @@
         />
 
     <browser:page
+        name="cancel_information"
+        for="*"
+        class=".cancel_information.CancelInformation"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="..interfaces.IBaseTask"
         name="view"
         class="plone.dexterity.browser.view.DefaultView"

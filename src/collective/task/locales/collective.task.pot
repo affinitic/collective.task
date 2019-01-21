@@ -38,6 +38,10 @@ msgstr ""
 msgid "Cancel attribution(s)"
 msgstr ""
 
+#: ../browser/cancel_information.py:56
+msgid "Cancel information(s)"
+msgstr ""
+
 #: ../browser/tasks-portlet.pt:21
 #: ../interfaces.py:26
 msgid "Deadline"
@@ -65,6 +69,10 @@ msgstr ""
 
 #: ../browser/cancel_attribution.py:72
 msgid "Please select attributions to cancel. The responsibles will be notified by mail."
+msgstr ""
+
+#: ../browser/cancel_information.py:57
+msgid "Please select information notices to cancel. The responsibles will be notified by mail."
 msgstr ""
 
 #: ../behaviors.py:14
