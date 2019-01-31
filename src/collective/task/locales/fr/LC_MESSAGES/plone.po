@@ -46,6 +46,14 @@ msgstr "Attribué"
 msgid "Cancel attribution(s)"
 msgstr "Annuler les attributions"
 
+#: ../profiles/default/workflows/validation_workflow/definition.xml
+msgid "Cancel refusal"
+msgstr "Annuler le refus de validation"
+
+#: ../profiles/default/workflows/validation_workflow/definition.xml
+msgid "Cancel validation"
+msgstr "Annuler la validation"
+
 #: ../profiles/default/registry.xml
 msgid "Dates"
 msgstr "Dates"

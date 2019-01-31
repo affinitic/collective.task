@@ -10,6 +10,7 @@
  <permission>Modify portal content</permission>
  <permission>View</permission>
  <state state_id="validated" title="Validated" i18n:attributes="title">
+  <exit-transition transition_id="cancel-validation"/>
   <permission-map name="View" acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -21,6 +22,7 @@
   </permission-map>
  </state>
  <state state_id="refused" title="Refused" i18n:attributes="title">
+  <exit-transition transition_id="cancel-refusal"/>
   <permission-map name="View" acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -76,6 +78,22 @@
   <action url="" category="workflow" icon="" i18n:translate="">Abandon</action>
   <guard>
    <guard-role>Manager</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="cancel-validation" title="Cancel validation" new_state="todo" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Cancel validation</action>
+  <guard>
+   <guard-role>Editor</guard-role>
+   <guard-role>Manager</guard-role>
+   <guard-role>Owner</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="cancel-refusal" title="Cancel refusal" new_state="todo" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Cancel refusal</action>
+  <guard>
+   <guard-role>Editor</guard-role>
+   <guard-role>Manager</guard-role>
+   <guard-role>Owner</guard-role>
   </guard>
  </transition>
 

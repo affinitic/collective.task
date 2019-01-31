@@ -49,6 +49,14 @@ msgstr ""
 msgid "Cancel attribution(s)"
 msgstr ""
 
+#: ../profiles/default/workflows/validation_workflow/definition.xml
+msgid "Cancel refusal"
+msgstr ""
+
+#: ../profiles/default/workflows/validation_workflow/definition.xml
+msgid "Cancel validation"
+msgstr ""
+
 #: ../profiles/default/registry.xml
 msgid "Deadline"
 msgstr ""
