@@ -80,6 +80,7 @@ class CancelInformation(z3c.form.form.Form):
                 else:
                     # delete local roles for user
                     self.context.manage_delLocalRoles([responsible_id])
+                self.context.reindexObjectSecurity()
 
                 email_notification_of_canceled_information(information)
 

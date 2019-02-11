@@ -93,6 +93,7 @@ class CancelTaskAttribution(z3c.form.form.Form):
                 else:
                     # delete local roles for user
                     document.manage_delLocalRoles([responsible])
+                document.reindexObjectSecurity()
 
                 # remove relevant subtask
                 self.context.manage_delObjects(subtask.id)
