@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.task\n"
-"POT-Creation-Date: 2014-02-24 08:50+0000\n"
+"POT-Creation-Date: 2019-02-12 09:43+0000\n"
 "PO-Revision-Date: 2013-03-21 16:30+0100\n"
 "Last-Translator: Cédric Messiant <cedricmessiant@ecreall.com>\n"
 "Language-Team: Ecréall\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 #: ../browser/add_information.py:17
-#: ../browser/attribute_task.py:59
+#: ../browser/attribute_task.py:61
 msgid "Add"
 msgstr "Ajouter"
 
@@ -23,15 +23,18 @@ msgstr "Ajouter"
 msgid "Add Tasks Portlet"
 msgstr "Ajouter une portlet des tâches"
 
-#: ../interfaces.py:59
+#: ../interfaces.py:58
 msgid "Addressee"
 msgstr "Destinataire"
 
 #: ../content/information.py:20
+#: ../content/task.py:19
 msgid "Addressees"
 msgstr "Destinataires"
 
 #: ../browser/cancel_attribution.py:76
+#: ../browser/cancel_information.py:60
+#: ../browser/cancel_validation.py:70
 msgid "Apply"
 msgstr "Appliquer"
 
@@ -39,12 +42,16 @@ msgstr "Appliquer"
 msgid "Cancel attribution(s)"
 msgstr "Annuler les attributions"
 
-#: ../browser/cancel_validation.py:67
+#: ../browser/cancel_information.py:56
+msgid "Cancel information(s)"
+msgstr "Annuler les informations"
+
+#: ../browser/cancel_validation.py:66
 msgid "Cancel validations request(s)"
 msgstr "Annuler des demandes de validation"
 
 #: ../browser/tasks-portlet.pt:21
-#: ../interfaces.py:74
+#: ../interfaces.py:73
 msgid "Deadline"
 msgstr "Échéance"
 
@@ -52,7 +59,7 @@ msgstr "Échéance"
 msgid "Edit Tasks Portlet"
 msgstr "Modifier la portlet des tâches"
 
-#: ../interfaces.py:46
+#: ../interfaces.py:45
 msgid "Enquirer"
 msgstr "Demandeur"
 
@@ -61,7 +68,11 @@ msgstr "Demandeur"
 msgid "Information"
 msgstr "Information"
 
-#: ../interfaces.py:42
+#: ../configure.zcml:35
+msgid "Installs the collective.task add-on."
+msgstr ""
+
+#: ../interfaces.py:41
 msgid "Note"
 msgstr "Note"
 
@@ -78,13 +89,22 @@ msgstr "Veuillez sélectionner les attributions à annuler. Les destinaires en s
 msgid "Please select information notices to cancel. The responsibles will be notified by mail."
 msgstr "Veuillez sélectionner les notes pour information à supprimer. Les personnes concernées en seront notifiées par mail."
 
-#: ../browser/cancel_validation.py:68
+#: ../browser/cancel_validation.py:67
 msgid "Please select validation requests to cancel. The responsibles will be notified by mail."
 msgstr "Veuillez sélectionner les demandes de validation à annuler. Les personnes concernées en seront notifiées par mail."
 
+#: ../testing.zcml:16
+msgid "Steps to ease tests of collective.task"
+msgstr ""
+
 #: ../behaviors.py:14
+#: ../behaviors.zcml:16
 msgid "Target"
 msgstr "Cible"
+
+#: ../behaviors.zcml:16
+msgid "Target behavior"
+msgstr ""
 
 #: ../profiles/testing/types/task.xml
 msgid "Task"
@@ -103,7 +123,7 @@ msgid "This portlet displays the list of related tasks."
 msgstr "Cette portlet affiche la liste des tâches liées"
 
 #: ../browser/portlet.py:17
-#: ../interfaces.py:41
+#: ../interfaces.py:40
 msgid "Title"
 msgstr "Titre"
 
@@ -112,7 +132,14 @@ msgstr "Titre"
 msgid "Validation"
 msgstr "Demande de validation"
 
-#: ../browser/attribute_task.py:33
+#: ../browser/attribute_task.py:35
 msgid "Workflow action"
 msgstr "Action de workflow"
 
+#: ../configure.zcml:35
+msgid "collective.task"
+msgstr ""
+
+#: ../testing.zcml:16
+msgid "collective.task tests"
+msgstr ""

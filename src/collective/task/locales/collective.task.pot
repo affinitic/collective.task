@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-07-09 14:17+0000\n"
+"POT-Creation-Date: 2019-02-12 09:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Domain: collective.task\n"
 
 #: ../browser/add_information.py:17
-#: ../browser/attribute_task.py:65
+#: ../browser/attribute_task.py:61
 msgid "Add"
 msgstr ""
 
@@ -26,11 +26,18 @@ msgstr ""
 msgid "Add Tasks Portlet"
 msgstr ""
 
-#: ../interfaces.py:44
+#: ../interfaces.py:58
 msgid "Addressee"
 msgstr ""
 
+#: ../content/information.py:20
+#: ../content/task.py:19
+msgid "Addressees"
+msgstr ""
+
 #: ../browser/cancel_attribution.py:76
+#: ../browser/cancel_information.py:60
+#: ../browser/cancel_validation.py:70
 msgid "Apply"
 msgstr ""
 
@@ -42,12 +49,12 @@ msgstr ""
 msgid "Cancel information(s)"
 msgstr ""
 
-#: ../browser/cancel_validation.py:67
+#: ../browser/cancel_validation.py:66
 msgid "Cancel validations request(s)"
 msgstr ""
 
 #: ../browser/tasks-portlet.pt:21
-#: ../interfaces.py:26
+#: ../interfaces.py:73
 msgid "Deadline"
 msgstr ""
 
@@ -55,19 +62,25 @@ msgstr ""
 msgid "Edit Tasks Portlet"
 msgstr ""
 
-#: ../interfaces.py:31
+#: ../interfaces.py:45
 msgid "Enquirer"
 msgstr ""
 
 #: ../profiles/default/types/information.xml
+#: ../profiles/testing/types/information.xml
 msgid "Information"
 msgstr ""
 
-#: ../interfaces.py:24
+#: ../configure.zcml:35
+msgid "Installs the collective.task add-on."
+msgstr ""
+
+#: ../interfaces.py:41
 msgid "Note"
 msgstr ""
 
 #: ../profiles/default/types/opinion.xml
+#: ../profiles/testing/types/opinion.xml
 msgid "Opinion"
 msgstr ""
 
@@ -79,15 +92,24 @@ msgstr ""
 msgid "Please select information notices to cancel. The responsibles will be notified by mail."
 msgstr ""
 
-#: ../browser/cancel_validation.py:68
+#: ../browser/cancel_validation.py:67
 msgid "Please select validation requests to cancel. The responsibles will be notified by mail."
 msgstr ""
 
+#: ../testing.zcml:16
+msgid "Steps to ease tests of collective.task"
+msgstr ""
+
 #: ../behaviors.py:14
+#: ../behaviors.zcml:16
 msgid "Target"
 msgstr ""
 
-#: ../profiles/default/types/task.xml
+#: ../behaviors.zcml:16
+msgid "Target behavior"
+msgstr ""
+
+#: ../profiles/testing/types/task.xml
 msgid "Task"
 msgstr ""
 
@@ -104,11 +126,12 @@ msgid "This portlet displays the list of related tasks."
 msgstr ""
 
 #: ../browser/portlet.py:17
-#: ../interfaces.py:23
+#: ../interfaces.py:40
 msgid "Title"
 msgstr ""
 
 #: ../profiles/default/types/validation.xml
+#: ../profiles/testing/types/validation.xml
 msgid "Validation"
 msgstr ""
 
@@ -116,3 +139,10 @@ msgstr ""
 msgid "Workflow action"
 msgstr ""
 
+#: ../configure.zcml:35
+msgid "collective.task"
+msgstr ""
+
+#: ../testing.zcml:16
+msgid "collective.task tests"
+msgstr ""

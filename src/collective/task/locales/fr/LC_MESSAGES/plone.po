@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.task\n"
-"POT-Creation-Date: 2014-02-24 08:50+0000\n"
+"POT-Creation-Date: 2019-02-12 09:43+0000\n"
 "PO-Revision-Date: 2013-07-08 16:09+0100\n"
 "Last-Translator: Vincent Fretin <vincent.fretin@gmail.com>\n"
 "Language-Team: Ecréall\n"
@@ -18,11 +18,15 @@ msgstr ""
 msgid "A portlet to display the list of related tasks"
 msgstr "Une portlet qui affiche la liste des tâches liées"
 
+#: ../profiles/default/workflows/basic_task_workflow/definition.xml
 #: ../profiles/default/workflows/task_workflow/definition.xml
+#: ../profiles/default/workflows/validation_workflow/definition.xml
 msgid "Abandon"
 msgstr "Abandonner"
 
+#: ../profiles/default/workflows/basic_task_workflow/definition.xml
 #: ../profiles/default/workflows/task_workflow/definition.xml
+#: ../profiles/default/workflows/validation_workflow/definition.xml
 msgid "Abandoned"
 msgstr "Abandonné"
 

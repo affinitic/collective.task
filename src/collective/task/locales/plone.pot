@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-07-09 14:17+0000\n"
+"POT-Creation-Date: 2019-02-12 09:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,15 @@ msgstr ""
 msgid "A portlet to display the list of related tasks"
 msgstr ""
 
+#: ../profiles/default/workflows/basic_task_workflow/definition.xml
 #: ../profiles/default/workflows/task_workflow/definition.xml
+#: ../profiles/default/workflows/validation_workflow/definition.xml
 msgid "Abandon"
 msgstr ""
 
+#: ../profiles/default/workflows/basic_task_workflow/definition.xml
 #: ../profiles/default/workflows/task_workflow/definition.xml
+#: ../profiles/default/workflows/validation_workflow/definition.xml
 msgid "Abandoned"
 msgstr ""
 
@@ -58,6 +62,10 @@ msgid "Cancel validation"
 msgstr ""
 
 #: ../profiles/default/registry.xml
+msgid "Dates"
+msgstr ""
+
+#: ../profiles/default/registry.xml
 msgid "Deadline"
 msgstr ""
 
@@ -77,6 +85,10 @@ msgstr ""
 #: ../profiles/default/workflows/basic_task_workflow/definition.xml
 #: ../profiles/default/workflows/task_workflow/definition.xml
 msgid "Mark as done"
+msgstr ""
+
+#: ../profiles/default/registry.xml
+msgid "Metadata"
 msgstr ""
 
 #: ../profiles/default/workflows/task_workflow/definition.xml
@@ -100,6 +112,10 @@ msgid "Responsible"
 msgstr ""
 
 #: ../profiles/default/workflows/task_workflow/definition.xml
+msgid "Return responsibility"
+msgstr ""
+
+#: ../profiles/default/workflows/task_workflow/definition.xml
 msgid "Subtask abandoned"
 msgstr ""
 
@@ -109,6 +125,10 @@ msgstr ""
 
 #: ../profiles/default/workflows/task_workflow/definition.xml
 msgid "Take responsibility"
+msgstr ""
+
+#: ../profiles/default/types/task.xml
+msgid "Task"
 msgstr ""
 
 #: ../profiles/default/portlets.xml
@@ -136,4 +156,3 @@ msgstr ""
 #: ../profiles/default/workflows/validation_workflow/definition.xml
 msgid "Validated"
 msgstr ""
-
