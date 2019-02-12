@@ -35,6 +35,13 @@
         />
 
     <browser:page
+        name="cancel_validation"
+        for="*"
+        class=".cancel_validation.CancelValidationRequest"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="..interfaces.IBaseTask"
         name="view"
         class="plone.dexterity.browser.view.DefaultView"

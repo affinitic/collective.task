@@ -39,6 +39,10 @@ msgstr "Appliquer"
 msgid "Cancel attribution(s)"
 msgstr "Annuler les attributions"
 
+#: ../browser/cancel_validation.py:67
+msgid "Cancel validations request(s)"
+msgstr "Annuler des demandes de validation"
+
 #: ../browser/tasks-portlet.pt:21
 #: ../interfaces.py:74
 msgid "Deadline"
@@ -73,6 +77,10 @@ msgstr "Veuillez sélectionner les attributions à annuler. Les destinaires en s
 #: ../browser/cancel_information.py:57
 msgid "Please select information notices to cancel. The responsibles will be notified by mail."
 msgstr "Veuillez sélectionner les notes pour information à supprimer. Les personnes concernées en seront notifiées par mail."
+
+#: ../browser/cancel_validation.py:68
+msgid "Please select validation requests to cancel. The responsibles will be notified by mail."
+msgstr "Veuillez sélectionner les demandes de validation à annuler. Les personnes concernées en seront notifiées par mail."
 
 #: ../behaviors.py:14
 msgid "Target"

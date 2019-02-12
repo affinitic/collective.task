@@ -42,6 +42,10 @@ msgstr ""
 msgid "Cancel information(s)"
 msgstr ""
 
+#: ../browser/cancel_validation.py:67
+msgid "Cancel validations request(s)"
+msgstr ""
+
 #: ../browser/tasks-portlet.pt:21
 #: ../interfaces.py:26
 msgid "Deadline"
@@ -73,6 +77,10 @@ msgstr ""
 
 #: ../browser/cancel_information.py:57
 msgid "Please select information notices to cancel. The responsibles will be notified by mail."
+msgstr ""
+
+#: ../browser/cancel_validation.py:68
+msgid "Please select validation requests to cancel. The responsibles will be notified by mail."
 msgstr ""
 
 #: ../behaviors.py:14
