@@ -82,8 +82,7 @@ class CancelInformation(z3c.form.form.Form):
                     self.context.manage_delLocalRoles([responsible_id])
                 self.context.reindexObjectSecurity()
 
-                email_notification_of_canceled_information(information)
-
+                # remove information (responsible is notified by email with an Event)
                 self.context.manage_delObjects(information.id)
 
         self.request.response.redirect(self.context.absolute_url())

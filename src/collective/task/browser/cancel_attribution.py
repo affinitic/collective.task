@@ -95,10 +95,7 @@ class CancelTaskAttribution(z3c.form.form.Form):
                     document.manage_delLocalRoles([responsible])
                 document.reindexObjectSecurity()
 
-                # remove relevant subtask
+                # remove relevant subtask (responsibles are notified by email with an Event)
                 self.context.manage_delObjects(subtask.id)
-
-                # notify responsible by mail it's removed
-                email_notification_of_canceled_subtask(subtask)
 
         self.request.response.redirect(find_nontask(self.context).absolute_url())
