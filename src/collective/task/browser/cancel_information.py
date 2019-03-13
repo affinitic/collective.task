@@ -2,7 +2,6 @@
 import z3c.form
 from Products.CMFCore.utils import getToolByName
 from collective.task import _
-from pfwbged.policy.subscribers.document import email_notification_of_canceled_information
 from plone import api
 from plone.supermodel import model
 from z3c.form import button
@@ -10,11 +9,13 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.field import Fields
 from z3c.form.interfaces import HIDDEN_MODE
 from zope import schema
+from zope.annotation.interfaces import IAnnotations
 from zope.i18nmessageid import MessageFactory
 from zope.interface import directlyProvides
 from zope.interface import implements
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary
+from DateTime import DateTime
 
 PMF = MessageFactory('plone')
 
@@ -81,6 +82,31 @@ class CancelInformation(z3c.form.form.Form):
                     # delete local roles for user
                     self.context.manage_delLocalRoles([responsible_id])
                 self.context.reindexObjectSecurity()
+
+                # store history about this task on its document
+                annotations = IAnnotations(self.context)
+                if not 'pfwbged_history' in annotations:
+                    annotations['pfwbged_history'] = []
+                # first, the information creation
+                annotations['pfwbged_history'].append({
+                    'time': information.creation_date,
+                    'action_id': 'creation',
+                    'action': 'Creation',
+                    'actor_name': information.creators[0],
+                    'task_title': information.title,
+                })
+                # second, the information deletion
+                annotations['pfwbged_history'].append({
+                    'time': DateTime(),
+                    'action_id': 'cancellation',
+                    'action': 'Cancellation',
+                    'actor_name': api.user.get_current().getId(),
+                    'task_title': information.title,
+                    'responsible': information.responsible[0],
+                })
+                # assign it back as a change to the list won't trigger the
+                # annotation to be saved on disk.
+                annotations['pfwbged_history'] = annotations['pfwbged_history'][:]
 
                 # remove information (responsible is notified by email with an Event)
                 self.context.manage_delObjects(information.id)

@@ -3,7 +3,6 @@ import z3c.form
 from Products.CMFCore.utils import getToolByName
 from attribute_task import find_nontask
 from collective.task import _
-from pfwbged.policy.subscribers.document import email_notification_of_canceled_subtask
 from plone import api
 from plone.supermodel import model
 from z3c.form import button
@@ -11,11 +10,13 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.field import Fields
 from z3c.form.interfaces import HIDDEN_MODE
 from zope import schema
+from zope.annotation.interfaces import IAnnotations
 from zope.i18nmessageid import MessageFactory
 from zope.interface import directlyProvides
 from zope.interface import implements
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary
+from DateTime import DateTime
 
 PMF = MessageFactory('plone')
 
@@ -94,6 +95,31 @@ class CancelTaskAttribution(z3c.form.form.Form):
                     # delete local roles for user
                     document.manage_delLocalRoles([responsible])
                 document.reindexObjectSecurity()
+
+                # store history about this task on its document
+                annotations = IAnnotations(document)
+                if not 'pfwbged_history' in annotations:
+                    annotations['pfwbged_history'] = []
+                # first, the task creation
+                annotations['pfwbged_history'].append({
+                    'time': subtask.creation_date,
+                    'action_id': 'creation',
+                    'action': 'Creation',
+                    'actor_name': subtask.creators[0],
+                    'task_title': subtask.title,
+                })
+                # second, the task deletion
+                annotations['pfwbged_history'].append({
+                    'time': DateTime(),
+                    'action_id': 'cancellation',
+                    'action': 'Cancellation',
+                    'actor_name': api.user.get_current().getId(),
+                    'task_title': subtask.title,
+                    'responsible': subtask.responsible[0],
+                })
+                # assign it back as a change to the list won't trigger the
+                # annotation to be saved on disk.
+                annotations['pfwbged_history'] = annotations['pfwbged_history'][:]
 
                 # remove relevant subtask (responsibles are notified by email with an Event)
                 self.context.manage_delObjects(subtask.id)
