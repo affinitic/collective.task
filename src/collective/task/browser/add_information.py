@@ -36,6 +36,7 @@ class AddInformation(DefaultAddForm):
                         continue
                     _data = deepcopy(data)
                     _data['responsible'] = [username]
+                    _data['responsible_groups'] = set([groupname])
                     obj = self.createAndAdd(_data)
                     if obj is not None:
                         objs.append(obj)

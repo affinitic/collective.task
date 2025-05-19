@@ -27,6 +27,17 @@ class IInformation(IBaseTask):
     )
     form.widget(responsible=AjaxChosenMultiFieldWidget)
 
+    form.mode(responsible_groups="hidden")
+    responsible_groups = schema.Set(
+        title=u"Responsible groups",
+        value_type=schema.Choice(
+            title=u"Responsible group",
+            vocabulary="dms.principals",
+            required=True,
+        ),
+        required = False,
+    )
+
 
 class Information(Item):
     """Information content type"""
